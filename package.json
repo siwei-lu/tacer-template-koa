@@ -1,0 +1,30 @@
+{
+  "name": "tacer-template-koa",
+  "version": "0.1.0",
+  "description": "Create a koa project using tacer",
+  "bin": {
+    "generate": "bin/generate.js",
+    "tacer-script": "bin/script.js"
+  },
+  "scripts": {
+    "build": "tacer-publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IdanLoo/tacer-template-koa"
+  },
+  "keywords": [],
+  "author": "Idan Loo <im@siwei.lu>",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^8.1.0",
+    "jest": "^24.8.0",
+    "rollup": "^1.16.4",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-terser": "^5.1.0",
+    "rollup-plugin-typescript2": "^0.21.2",
+    "tacer-seed": "^0.2.3",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.2"
+  }
+}
