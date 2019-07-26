@@ -1,4 +1,3 @@
-const { pathsToModuleNameMapper } = require('ts-jest/utils')
 const { resolve } = require('path')
 
 const cwd = process.cwd()
