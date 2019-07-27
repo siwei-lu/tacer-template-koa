@@ -6,8 +6,9 @@ const typescript = require('rollup-plugin-typescript2')
 
 const cwd = process.cwd()
 const entrypoint = resolve(cwd, 'src', 'index.ts')
-const distPath = resolve(cwd, 'dist', 'index.js')
+const outdir = resolve(__dirname, '..', '.tmp')
 const cacheRoot = resolve(__dirname, '..', '.cache')
+const runApp = resolve(__dirname, '..', 'runApp.js')
 
 const tsconfigDefaults = {
   exclude: ['__tests__/', 'types/'],
@@ -22,7 +23,7 @@ function runner() {
       cp = null
     }
 
-    cp = spawn('node', [distPath], {
+    cp = spawn('node', [runApp, outdir], {
       stdio: 'inherit',
       env: {
         ...process.env,
@@ -37,7 +38,7 @@ function start() {
   const watcher = watch({
     input: entrypoint,
     output: {
-      file: distPath,
+      file: outdir,
       format: 'cjs',
       sourcemap: 'inline',
     },

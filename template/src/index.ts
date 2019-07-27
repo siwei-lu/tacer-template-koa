@@ -1,7 +1,7 @@
 import Koa from 'koa'
 import koaBody from 'koa-body'
 import koaLogger from 'koa-logger'
-import cors from 'koa-cors'
+import cors from '@koa/cors'
 import router from './router'
 
 const app = new Koa()
