@@ -4,10 +4,11 @@ const { resolve } = require('path')
 const autoExternal = require('rollup-plugin-auto-external')
 const typescript = require('rollup-plugin-typescript2')
 
-const entrypoint = resolve(`${process.cwd()}/src/index.ts`)
-const distPath = resolve(`${process.cwd()}/dist/index.js`)
-const cacheRoot = resolve(__dirname, '../.cache')
-const bin = resolve(process.cwd(), '.bin/run.js')
+const cwd = process.cwd()
+const entrypoint = resolve(cwd, 'src', 'index.ts')
+const distPath = resolve(cwd, 'dist', 'index.js')
+const cacheRoot = resolve(__dirname, '..', '.cache')
+const bin = resolve(cwd, 'bin', 'run.js')
 
 const tsconfigDefaults = {
   exclude: ['__tests__/', 'types/'],
@@ -39,9 +40,7 @@ function start() {
     output: {
       file: distPath,
       format: 'cjs',
-    },
-    watch: {
-      clearScreen: true,
+      sourcemap: 'inline',
     },
     plugins: [
       autoExternal(),

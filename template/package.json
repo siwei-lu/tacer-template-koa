@@ -1,0 +1,33 @@
+{
+  "name": "koa",
+  "version": "0.2.0",
+  "description": "Say Something",
+  "main": "dist/index.js",
+  "bin": {
+    "www": "./bin/run.js"
+  },
+  "scripts": {
+    "start": "tacer-script start",
+    "build": "tacer-script build",
+    "test": "tacer-script test"
+  },
+  "author": "Idan Loo <im@siwei.lu>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "@types/koa": "^2.0.49",
+    "@types/koa-cors": "^0.0.0",
+    "@types/koa-logger": "^3.1.1",
+    "@types/koa-router": "^7.0.42",
+    "@types/supertest": "^2.0.8",
+    "supertest": "^4.0.2",
+    "tacer-template-koa": "file:.."
+  },
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-body": "^4.1.0",
+    "koa-cors": "^0.0.16",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0"
+  }
+}
