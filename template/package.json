@@ -4,11 +4,12 @@
   "description": "Say Something",
   "main": "dist/index.js",
   "bin": {
-    "www": "./bin/run.js"
+    "serve": "bin/run.js"
   },
   "scripts": {
     "start": "tacer-script start",
     "build": "tacer-script build",
+    "build:dev": "NODE_ENV=development tacer-script build",
     "test": "tacer-script test"
   },
   "author": "Idan Loo <im@siwei.lu>",

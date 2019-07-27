@@ -12,19 +12,33 @@ const tsconfigDefaults = {
   exclude: ['__tests__/', 'types/'],
 }
 
+const isDevelopment = process.env.NODE_ENV === 'development'
+
+const plugins = [
+  autoExternal(),
+  typescript({
+    cacheRoot,
+    tsconfigDefaults,
+    useTsconfigDeclarationDir: true,
+  }),
+]
+
+const output = {
+  file: distPath,
+  format: 'cjs',
+}
+
 function build() {
+  if (!isDevelopment) {
+    plugins.push(terser())
+  } else {
+    output.sourcemap = 'inline'
+  }
+
   return rollup({
     input: entrypoint,
-    plugins: [
-      autoExternal(),
-      typescript({
-        cacheRoot,
-        tsconfigDefaults,
-        useTsconfigDeclarationDir: true,
-      }),
-      terser(),
-    ],
-  }).then(bundle => bundle.write({ file: distPath, format: 'cjs' }))
+    plugins,
+  }).then(bundle => bundle.write(output))
 }
 
 module.exports = build

@@ -10,5 +10,6 @@ if (scripts.indexOf(`${targetName}.js`) === -1) {
   throw new Error(`No method named ${targetName}!`)
 }
 
+const params = process.argv.slice(3)
 const target = require(`${scriptsPath}/${targetName}`)
-target()
+target(...params)

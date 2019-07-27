@@ -8,7 +8,6 @@ const cwd = process.cwd()
 const entrypoint = resolve(cwd, 'src', 'index.ts')
 const distPath = resolve(cwd, 'dist', 'index.js')
 const cacheRoot = resolve(__dirname, '..', '.cache')
-const bin = resolve(cwd, 'bin', 'run.js')
 
 const tsconfigDefaults = {
   exclude: ['__tests__/', 'types/'],
@@ -23,7 +22,7 @@ function runner() {
       cp = null
     }
 
-    cp = spawn('node', [bin], {
+    cp = spawn('node', [distPath], {
       stdio: 'inherit',
       env: {
         ...process.env,
