@@ -4,9 +4,10 @@ const { terser } = require('rollup-plugin-terser')
 const autoExternal = require('rollup-plugin-auto-external')
 const typescript = require('rollup-plugin-typescript2')
 
-const entrypoint = resolve(`${process.cwd()}/src/index.ts`)
-const distPath = resolve(`${process.cwd()}/dist/index.js`)
-const cacheRoot = resolve(__dirname, '../.cache')
+const cwd = process.cwd()
+const entrypoint = resolve(cwd, 'src', 'index.ts')
+const distFile = resolve(cwd, 'dist', 'index.js')
+const cacheRoot = resolve(__dirname, '..', '.cache')
 
 const tsconfigDefaults = {
   exclude: ['__tests__/', 'types/'],
@@ -24,7 +25,7 @@ const plugins = [
 ]
 
 const output = {
-  file: distPath,
+  file: distFile,
   format: 'cjs',
 }
 

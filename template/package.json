@@ -2,9 +2,8 @@
   "name": "koa",
   "version": "0.2.0",
   "description": "Say Something",
-  "main": "dist/index.js",
   "bin": {
-    "serve": "bin/run.js"
+    "test-koa-serve": "dist/index.js"
   },
   "scripts": {
     "start": "tacer-script start",
