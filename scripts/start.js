@@ -32,7 +32,7 @@ function runner() {
   }
 }
 
-function start() {
+module.exports = function start() {
   const run = runner()
   const watcher = watch({
     input: entrypoint,
@@ -61,5 +61,3 @@ function start() {
     }
   })
 }
-
-module.exports = start

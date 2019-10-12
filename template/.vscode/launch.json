@@ -8,8 +8,8 @@
       "type": "node",
       "request": "launch",
       "name": "App",
-      "program": "${workspaceFolder}/bin/run.js",
-      "preLaunchTask": "npm: build:dev"
+      "program": "${workspaceFolder}/dist/index.js",
+      "preLaunchTask": "npm: build"
     }
   ]
 }

@@ -9,12 +9,11 @@ const entrypoint = resolve(cwd, 'src', 'index.ts')
 const distFile = resolve(cwd, 'dist', 'index.js')
 const cacheRoot = resolve(__dirname, '..', '.cache')
 
-const plugins = [autoExternal(), typescript({ cacheRoot })]
+const plugins = [autoExternal(), typescript({ cacheRoot }), terser()]
 
 const output = {
   file: distFile,
   format: 'cjs',
-  sourcemap: 'inline',
 }
 
 module.exports = function build() {

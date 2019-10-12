@@ -1,7 +1,7 @@
 import request from 'supertest'
-import app from '~'
+import app from '~/app'
 
-test('tacer router works', async () => {
+test('returns 200 and Hello, tacer', async () => {
   const resp = await request(app.callback()).get('/')
 
   expect(resp.status).toBe(200)
