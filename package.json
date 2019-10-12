@@ -1,6 +1,6 @@
 {
   "name": "tacer-template-koa",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Create a koa project using tacer",
   "bin": {
     "tacer-script": "bin/script.js"
