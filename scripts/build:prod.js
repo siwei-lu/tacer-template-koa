@@ -17,7 +17,7 @@ const output = {
 }
 
 module.exports = function build() {
-  return rollup({ input: entrypoint, plugins }).then(bundle =>
-    bundle.write(output)
-  )
+  return rollup({ input: entrypoint, plugins })
+    .then(bundle => bundle.write(output))
+    .catch(err => console.error(err) || process.exit(1))
 }

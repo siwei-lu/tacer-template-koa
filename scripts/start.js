@@ -10,7 +10,7 @@ const outdir = resolve(__dirname, '..', '.tmp')
 const cacheRoot = resolve(__dirname, '..', '.cache')
 
 const tsconfigDefaults = {
-  exclude: ['__tests__/', 'types/'],
+  exclude: ['types/'],
 }
 
 function runner() {

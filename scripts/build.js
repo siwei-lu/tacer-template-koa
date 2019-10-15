@@ -17,8 +17,10 @@ const output = {
   sourcemap: 'inline',
 }
 
-module.exports = function build() {
-  return rollup({ input: entrypoint, plugins }).then(bundle =>
-    bundle.write(output)
-  )
+function build() {
+  return rollup({ input: entrypoint, plugins })
+    .then(bundle => bundle.write(output))
+    .catch(err => console.error(err) || process.exit(1))
 }
+
+module.exports = build
