@@ -1,4 +1,4 @@
-const { spawn } = require('child_process')
+const { execSync } = require('child_process')
 const { resolve } = require('path')
 const config = resolve(__dirname, '../jest.config.js')
 
